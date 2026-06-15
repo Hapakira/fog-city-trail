@@ -4,41 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Trail – Fog City Trail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --fog: #e9edf0;
-    --fog-deep: #c8d2d8;
-    --ink: #2b3a42;
-    --accent: #3f7a8c;
-    --accent-dark: #2c5a68;
+    --bg: #15181a;
+    --bg-elevated: #1f2326;
+    --bg-card: #242a2d;
+    --ink: #f3f5f6;
+    --ink-muted: #c4cbce;
+    --fog: #8a9296;
+    --fog-light: #aab4b8;
+    --accent: #6fc3df;
+    --accent-dark: #4a93ad;
+    --border: #34393d;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-    color: var(--ink);
-    background: #ffffff;
+    color: var(--ink-muted);
+    background: var(--bg);
     line-height: 1.7;
+  }
+  .wordmark {
+    font-family: "Fredoka", -apple-system, sans-serif;
+    color: #ffffff;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.45);
   }
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem 2rem;
-    background: #ffffff;
-    border-bottom: 1px solid var(--fog-deep);
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
   }
   .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-weight: 700;
     font-size: 1.25rem;
     letter-spacing: 0.02em;
-    color: var(--accent-dark);
     text-decoration: none;
   }
+  .logo svg { flex-shrink: 0; }
   nav a {
     margin-left: 1.5rem;
     text-decoration: none;
-    color: var(--ink);
+    color: var(--ink-muted);
     font-size: 0.95rem;
     font-weight: 500;
   }
@@ -49,12 +65,17 @@
     padding: 2.5rem 1.5rem 4rem;
   }
   h1 {
-    color: var(--accent-dark);
+    font-family: "Fredoka", -apple-system, sans-serif;
+    color: #ffffff;
+    font-size: 2.4rem;
+    letter-spacing: 0.02em;
     margin-bottom: 0.25rem;
   }
+  .wisp { display: block; max-width: 320px; width: 100%; margin: 0.25rem 0 1rem; }
   h2 {
-    color: var(--accent-dark);
-    border-bottom: 2px solid var(--fog-deep);
+    font-family: "Fredoka", -apple-system, sans-serif;
+    color: #ffffff;
+    border-bottom: 2px solid var(--border);
     padding-bottom: 0.3rem;
     margin-top: 2.5rem;
   }
@@ -63,12 +84,13 @@
     margin-bottom: 0.3rem;
   }
   .meta {
-    color: #5a6a72;
+    color: var(--fog-light);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
   }
   .section-card {
-    background: var(--fog);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     margin-bottom: 1.25rem;
@@ -78,23 +100,24 @@
     align-items: center;
   }
   .section-text { flex: 1 1 280px; }
-  .section-map { flex: 0 0 100px; }
-  .section-map svg { display: block; width: 100px; height: auto; }
+  .section-map { flex: 1 1 280px; max-width: 320px; }
+  .section-map iframe {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border: 0;
+    border-radius: 6px;
+  }
   .section-map figcaption {
     text-align: center;
     font-size: 0.75rem;
-    color: #5a6a72;
+    color: var(--fog-light);
     margin-top: 0.25rem;
-  }
-  .map-label {
-    font-size: 11px;
-    fill: var(--ink);
-    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   }
   .badge {
     display: inline-block;
     background: var(--accent);
-    color: #fff;
+    color: #102126;
     font-size: 0.75rem;
     font-weight: 700;
     border-radius: 4px;
@@ -104,7 +127,7 @@
   }
   .extension {
     border: 2px dashed var(--accent);
-    background: #f6fafb;
+    background: #1c2628;
   }
   ol, ul {
     padding-left: 1.4rem;
@@ -112,17 +135,26 @@
   footer {
     text-align: center;
     padding: 2rem 1rem;
-    color: #7c8a90;
+    color: var(--fog);
     font-size: 0.85rem;
-    border-top: 1px solid var(--fog-deep);
+    border-top: 1px solid var(--border);
     margin-top: 3rem;
   }
   a { color: var(--accent); }
+  strong { color: #ffffff; }
 </style>
 </head>
 <body>
   <header>
-    <a class="logo" href="index.html">Fog City Trail</a>
+    <a class="logo wordmark" href="index.html">
+      <svg width="30" height="20" viewBox="0 0 64 40" aria-hidden="true">
+        <circle cx="16" cy="24" r="12" fill="#ffffff"/>
+        <circle cx="30" cy="14" r="15" fill="#ffffff"/>
+        <circle cx="46" cy="24" r="12" fill="#ffffff"/>
+        <rect x="8" y="22" width="48" height="14" rx="7" fill="#ffffff"/>
+      </svg>
+      Fog City Trail
+    </a>
     <nav>
       <a href="index.html">Home</a>
       <a href="trail.html" class="active">The Trail</a>
@@ -130,7 +162,13 @@
   </header>
 
   <main>
-    <h1>The Trail</h1>
+    <h1 class="wordmark">THE TRAIL</h1>
+    <svg class="wisp" viewBox="0 0 600 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0,32 C70,12 140,46 210,28 C280,10 340,46 410,28 C470,14 530,38 600,26"
+            fill="none" stroke="#4a5054" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+      <path d="M0,22 C80,40 150,8 230,26 C300,44 370,8 450,22 C500,32 550,18 600,24"
+            fill="none" stroke="#6b7378" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+    </svg>
     <p class="meta">Draft route &middot; ~10–12 miles &middot; north to south through Pacifica, CA</p>
 
     <p>
@@ -166,16 +204,10 @@
       </p>
       </div>
       <figure class="section-map">
-        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
-          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
-          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
-                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M130,30 L150,120"
-                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="130" cy="30" r="8" fill="var(--accent-dark)"/>
-          <circle cx="150" cy="120" r="8" fill="var(--accent-dark)"/>
-        </svg>
+        <iframe
+          src="https://www.google.com/maps?saddr=37.6735,-122.4972&daddr=37.6453,-122.4878&dirflg=w&output=embed"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="Map: Mussel Rock to Sharp Park"></iframe>
         <figcaption>Mussel Rock → Sharp Park</figcaption>
       </figure>
     </div>
@@ -191,16 +223,10 @@
       </p>
       </div>
       <figure class="section-map">
-        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
-          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
-          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
-                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M150,120 L115,210"
-                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="150" cy="120" r="8" fill="var(--accent-dark)"/>
-          <circle cx="115" cy="210" r="8" fill="var(--accent-dark)"/>
-        </svg>
+        <iframe
+          src="https://www.google.com/maps?saddr=37.6453,-122.4878&daddr=37.6257,-122.4955&dirflg=w&output=embed"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="Map: Sharp Park to Mori Point"></iframe>
         <figcaption>Sharp Park → Mori Point</figcaption>
       </figure>
     </div>
@@ -217,16 +243,10 @@
       </p>
       </div>
       <figure class="section-map">
-        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
-          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
-          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
-                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M115,210 L145,300"
-                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="115" cy="210" r="8" fill="var(--accent-dark)"/>
-          <circle cx="145" cy="300" r="8" fill="var(--accent-dark)"/>
-        </svg>
+        <iframe
+          src="https://www.google.com/maps?saddr=37.6257,-122.4955&daddr=37.5995,-122.4943&dirflg=w&output=embed"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="Map: Mori Point to Rockaway Beach"></iframe>
         <figcaption>Mori Point → Rockaway Beach</figcaption>
       </figure>
     </div>
@@ -242,16 +262,10 @@
       </p>
       </div>
       <figure class="section-map">
-        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
-          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
-          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
-                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M145,300 L175,390"
-                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="145" cy="300" r="8" fill="var(--accent-dark)"/>
-          <circle cx="175" cy="390" r="8" fill="var(--accent-dark)"/>
-        </svg>
+        <iframe
+          src="https://www.google.com/maps?saddr=37.5995,-122.4943&daddr=37.5763,-122.4986&dirflg=w&output=embed"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="Map: Rockaway Beach to Linda Mar"></iframe>
         <figcaption>Rockaway Beach → Linda Mar</figcaption>
       </figure>
     </div>
@@ -266,16 +280,10 @@
       </p>
       </div>
       <figure class="section-map">
-        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
-          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
-          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
-                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M175,390 L205,480"
-                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="175" cy="390" r="8" fill="var(--accent-dark)"/>
-          <circle cx="205" cy="480" r="8" fill="var(--accent-dark)"/>
-        </svg>
+        <iframe
+          src="https://www.google.com/maps?saddr=37.5763,-122.4986&daddr=37.5635,-122.4847&dirflg=w&output=embed"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="Map: Linda Mar to San Pedro Valley Park"></iframe>
         <figcaption>Linda Mar → San Pedro Valley Park</figcaption>
       </figure>
     </div>
@@ -291,16 +299,10 @@
       </p>
       </div>
       <figure class="section-map">
-        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
-          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
-          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480"
-                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M205,480 L235,540"
-                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6"/>
-          <circle cx="205" cy="480" r="8" fill="var(--accent-dark)"/>
-          <circle cx="235" cy="540" r="8" fill="#fff" stroke="var(--accent-dark)" stroke-width="2"/>
-        </svg>
+        <iframe
+          src="https://www.google.com/maps?saddr=37.5635,-122.4847&daddr=37.5544,-122.4943&dirflg=w&output=embed"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="Map: San Pedro Valley Park to Montara Mountain"></iframe>
         <figcaption>San Pedro Valley Park → Montara Mtn</figcaption>
       </figure>
     </div>
