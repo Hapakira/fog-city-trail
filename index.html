@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fog City Trail</title>
+<style>
+  :root {
+    --fog: #e9edf0;
+    --fog-deep: #c8d2d8;
+    --ink: #2b3a42;
+    --accent: #3f7a8c;
+    --accent-dark: #2c5a68;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, var(--fog) 0%, #ffffff 320px);
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    background: #ffffff;
+    border-bottom: 1px solid var(--fog-deep);
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+    color: var(--accent-dark);
+    text-decoration: none;
+  }
+  nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  nav a:hover, nav a.active { color: var(--accent); }
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 2rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-dark);
+  }
+  .hero p.tagline {
+    font-size: 1.15rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.75rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .cta:hover { background: var(--accent-dark); }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+    max-width: 800px;
+    text-align: center;
+  }
+  .stats div strong {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--accent-dark);
+  }
+  .stats div span {
+    font-size: 0.9rem;
+    color: #5a6a72;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #7c8a90;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--fog-deep);
+    margin-top: 3rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Fog City Trail</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="trail.html">The Trail</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Fog City Trail</h1>
+    <p class="tagline">Step through Pacifica, coast to ridge</p>
+    <p>
+      The Fog City Trail is a proposed end-to-end route through Pacifica, California —
+      in the spirit of the San Francisco Crosstown Trail. Running the length of the
+      city from the bluffs of Mussel Rock to the wild canyons of San Pedro Valley,
+      it links neighborhood streets and staircases, the existing waterfront trail,
+      coastal bluffs, and (with an optional spur) the high ridgeline of Montara Mountain.
+    </p>
+    <p>
+      Walk it, run it, or bike it — in either direction. Cross the city in a day,
+      or explore it one section at a time.
+    </p>
+    <a class="cta" href="trail.html">Explore the Trail →</a>
+  </section>
+
+  <div class="stats">
+    <div><strong>~10–12 mi</strong><span>End to end</span></div>
+    <div><strong>5</strong><span>Sections</span></div>
+    <div><strong>2</strong><span>Coastal endpoints</span></div>
+  </div>
+
+  <footer>
+    Fog City Trail — a draft route concept for Pacifica, CA. Not an official city project.
+  </footer>
+</body>
+</html>
