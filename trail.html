@@ -72,6 +72,24 @@
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     margin-bottom: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  .section-text { flex: 1 1 280px; }
+  .section-map { flex: 0 0 100px; }
+  .section-map svg { display: block; width: 100px; height: auto; }
+  .section-map figcaption {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #5a6a72;
+    margin-top: 0.25rem;
+  }
+  .map-label {
+    font-size: 11px;
+    fill: var(--ink);
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   }
   .badge {
     display: inline-block;
@@ -137,6 +155,7 @@
     <h2>Route overview</h2>
 
     <div class="section-card">
+      <div class="section-text">
       <h3><span class="badge">1</span>Mussel Rock &amp; Westview / Fairmont</h3>
       <p>
         The trail begins at <strong>Mussel Rock Park</strong>, on the
@@ -145,9 +164,24 @@
         <strong>Westview</strong> and <strong>Fairmont</strong> neighborhoods via
         streets and staircases toward Sharp Park.
       </p>
+      </div>
+      <figure class="section-map">
+        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
+          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
+          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
+                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M130,30 L150,120"
+                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="130" cy="30" r="8" fill="var(--accent-dark)"/>
+          <circle cx="150" cy="120" r="8" fill="var(--accent-dark)"/>
+        </svg>
+        <figcaption>Mussel Rock → Sharp Park</figcaption>
+      </figure>
     </div>
 
     <div class="section-card">
+      <div class="section-text">
       <h3><span class="badge">2</span>Sharp Park &amp; Mori Point</h3>
       <p>
         Through Pacifica's historic downtown core near the Sanchez Library, then
@@ -155,9 +189,24 @@
         ocean views — before joining the paved coastal path along
         <strong>Sharp Park Golf Course</strong> and <strong>Calera Creek</strong>.
       </p>
+      </div>
+      <figure class="section-map">
+        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
+          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
+          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
+                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M150,120 L115,210"
+                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="150" cy="120" r="8" fill="var(--accent-dark)"/>
+          <circle cx="115" cy="210" r="8" fill="var(--accent-dark)"/>
+        </svg>
+        <figcaption>Sharp Park → Mori Point</figcaption>
+      </figure>
     </div>
 
     <div class="section-card">
+      <div class="section-text">
       <h3><span class="badge">3</span>Rockaway Beach &amp; the hills</h3>
       <p>
         The coastal path arrives at <strong>Rockaway Beach</strong>, Pacifica's
@@ -166,9 +215,24 @@
         "high road" variant toward Mori Ridge and Sweeney Ridge for those wanting
         more elevation.
       </p>
+      </div>
+      <figure class="section-map">
+        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
+          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
+          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
+                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M115,210 L145,300"
+                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="115" cy="210" r="8" fill="var(--accent-dark)"/>
+          <circle cx="145" cy="300" r="8" fill="var(--accent-dark)"/>
+        </svg>
+        <figcaption>Mori Point → Rockaway Beach</figcaption>
+      </figure>
     </div>
 
     <div class="section-card">
+      <div class="section-text">
       <h3><span class="badge">4</span>Pacifica State Beach &amp; Linda Mar</h3>
       <p>
         Descending to <strong>Pacifica Pier</strong> and <strong>Pacifica State
@@ -176,18 +240,48 @@
         Pacifica's largest residential neighborhood — via streets, parks, and
         playgrounds.
       </p>
+      </div>
+      <figure class="section-map">
+        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
+          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
+          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
+                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M145,300 L175,390"
+                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="145" cy="300" r="8" fill="var(--accent-dark)"/>
+          <circle cx="175" cy="390" r="8" fill="var(--accent-dark)"/>
+        </svg>
+        <figcaption>Rockaway Beach → Linda Mar</figcaption>
+      </figure>
     </div>
 
     <div class="section-card">
+      <div class="section-text">
       <h3><span class="badge">5</span>San Pedro Valley Park</h3>
       <p>
         The main route ends at <strong>San Pedro Valley County Park</strong>,
         where neighborhood streets give way to wilderness hiking and riding
         trails at the head of the valley.
       </p>
+      </div>
+      <figure class="section-map">
+        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
+          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
+          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480 L235,540"
+                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M175,390 L205,480"
+                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="175" cy="390" r="8" fill="var(--accent-dark)"/>
+          <circle cx="205" cy="480" r="8" fill="var(--accent-dark)"/>
+        </svg>
+        <figcaption>Linda Mar → San Pedro Valley Park</figcaption>
+      </figure>
     </div>
 
     <div class="section-card extension">
+      <div class="section-text">
       <h3><span class="badge">+</span>Optional extension: Montara Mountain – North Peak</h3>
       <p>
         For a high-elevation southern bookend, continue from San Pedro Valley
@@ -195,6 +289,20 @@
         trading the coastal fog for sweeping views back over Pacifica and the
         ocean. This spur adds significant elevation gain and distance.
       </p>
+      </div>
+      <figure class="section-map">
+        <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
+          <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
+          <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480"
+                stroke="#c8d2d8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M205,480 L235,540"
+                stroke="var(--accent)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6"/>
+          <circle cx="205" cy="480" r="8" fill="var(--accent-dark)"/>
+          <circle cx="235" cy="540" r="8" fill="#fff" stroke="var(--accent-dark)" stroke-width="2"/>
+        </svg>
+        <figcaption>San Pedro Valley Park → Montara Mtn</figcaption>
+      </figure>
     </div>
 
     <h2>Open questions</h2>

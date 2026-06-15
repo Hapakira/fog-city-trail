@@ -100,6 +100,41 @@
     border-top: 1px solid var(--fog-deep);
     margin-top: 3rem;
   }
+  .map-section {
+    max-width: 800px;
+    margin: 1rem auto 3rem;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  .map-section h2 {
+    color: var(--accent-dark);
+    margin-bottom: 0.5rem;
+  }
+  .map-section p {
+    color: #5a6a72;
+    font-size: 0.95rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  .map-frame {
+    background: #fff;
+    border: 1px solid var(--fog-deep);
+    border-radius: 10px;
+    padding: 1rem;
+    display: inline-block;
+  }
+  .map-frame svg { display: block; width: 240px; height: auto; }
+  .map-label {
+    font-size: 11px;
+    fill: var(--ink);
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  .map-label-light {
+    font-size: 10px;
+    fill: #5a6a72;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0.05em;
+  }
 </style>
 </head>
 <body>
@@ -133,6 +168,64 @@
     <div><strong>5</strong><span>Sections</span></div>
     <div><strong>2</strong><span>Coastal endpoints</span></div>
   </div>
+
+  <section class="map-section">
+    <h2>Route at a glance</h2>
+    <p>A stylized north-to-south overview of the Fog City Trail, from Mussel Rock to San Pedro Valley Park, with the optional Montara Mountain extension.</p>
+    <div class="map-frame">
+      <svg viewBox="0 0 260 560" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ocean -->
+        <rect x="0" y="0" width="140" height="560" fill="#dbe9f0"/>
+        <!-- Land / hills -->
+        <rect x="140" y="0" width="120" height="560" fill="#e7efe2"/>
+        <text x="20" y="25" class="map-label-light">PACIFIC OCEAN</text>
+        <text x="170" y="25" class="map-label-light">HILLS / GGNRA</text>
+
+        <!-- Extension (dashed) -->
+        <path d="M205,480 L235,540" stroke="var(--accent)" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+
+        <!-- Main route -->
+        <path d="M130,30 L150,120 L115,210 L145,300 L175,390 L205,480"
+              stroke="var(--accent)" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- Markers -->
+        <circle cx="130" cy="30" r="7" fill="#fff" stroke="var(--accent-dark)" stroke-width="2"/>
+        <text x="130" y="34" text-anchor="middle" class="map-label" font-weight="700">N</text>
+        <text x="142" y="22" class="map-label">Mussel Rock</text>
+
+        <circle cx="150" cy="120" r="7" fill="var(--accent)" />
+        <text x="150" y="124" text-anchor="middle" class="map-label" fill="#fff" font-weight="700">1</text>
+        <text x="162" y="116" class="map-label">Sharp Park</text>
+
+        <circle cx="115" cy="210" r="7" fill="var(--accent)" />
+        <text x="115" y="214" text-anchor="middle" class="map-label" fill="#fff" font-weight="700">2</text>
+        <text x="40" y="206" class="map-label">Mori Point</text>
+
+        <circle cx="145" cy="300" r="7" fill="var(--accent)" />
+        <text x="145" y="304" text-anchor="middle" class="map-label" fill="#fff" font-weight="700">3</text>
+        <text x="157" y="296" class="map-label">Rockaway Beach</text>
+
+        <circle cx="175" cy="390" r="7" fill="var(--accent)" />
+        <text x="175" y="394" text-anchor="middle" class="map-label" fill="#fff" font-weight="700">4</text>
+        <text x="100" y="386" class="map-label">Linda Mar</text>
+
+        <circle cx="205" cy="480" r="7" fill="var(--accent)" />
+        <text x="205" y="484" text-anchor="middle" class="map-label" fill="#fff" font-weight="700">5</text>
+        <text x="60" y="476" class="map-label">San Pedro Valley Park</text>
+
+        <circle cx="235" cy="540" r="7" fill="#fff" stroke="var(--accent)" stroke-width="2"/>
+        <text x="235" y="544" text-anchor="middle" class="map-label" font-weight="700">+</text>
+        <text x="130" y="556" class="map-label">Montara Mountain (extension)</text>
+
+        <!-- Compass -->
+        <g transform="translate(238,20)">
+          <line x1="0" y1="10" x2="0" y2="-6" stroke="var(--ink)" stroke-width="1.5"/>
+          <polygon points="0,-10 -3,-4 3,-4" fill="var(--ink)"/>
+          <text x="0" y="22" text-anchor="middle" class="map-label" font-weight="700">N</text>
+        </g>
+      </svg>
+    </div>
+  </section>
 
   <footer>
     Fog City Trail — a draft route concept for Pacifica, CA. Not an official city project.
